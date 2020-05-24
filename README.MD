@@ -14,8 +14,8 @@ This project is heavily inspired by following two articles:-
 - [x] Create package.json to generate the library
 - [x] Add Jest for writing and implementing the test cases
 - [x] Add Nest CLI configuration to generate Nest Modules or classes via Nest CLI commands
-- [ ] Formatting and Linting
-- [ ] Use the magic scripts in NPM
+- [x] Formatting and Linting
+- [x] Use the magic scripts in NPM
 - [x] Restrict code getting published via NPM _(only JS file and source code map should be published)_
 - [x] Publish NPM
 
