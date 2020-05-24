@@ -1,16 +1,30 @@
 {
   "name": "cs-nestrand",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A random number generator for NestJS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeSnooker/cs-nestrand.git"
+  },
   "main": "dist/index",
   "types": "dist/index",
+  "keywords": [
+    "NestJS",
+    "library"
+  ],
   "files": [
     "dist/**/*"
   ],
   "scripts": {
     "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "build": "rimraf dist && tsc",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm test && npm run lint",
+    "prepublish": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "author": "Paras Mendiratta <code.snooker@gmail.com>",
   "license": "MIT",
@@ -26,11 +40,14 @@
     "@types/jest": "25.2.3",
     "@types/node": "14.0.5",
     "jest": "26.0.1",
+    "prettier": "2.0.5",
     "rimraf": "3.0.2",
     "ts-jest": "26.0.0",
     "ts-loader": "7.0.4",
     "ts-node": "8.10.1",
     "tsconfig-paths": "3.9.0",
+    "tslint": "6.1.2",
+    "tslint-config-prettier": "1.18.0",
     "typescript": "3.9.3"
   },
   "jest": {

@@ -1,19 +1,12 @@
-import { Injectable } from "@nestjs/common";
-import {
-  defaultRandomNumberServiceOptions,
-  RandomNumberServiceOptions,
-} from "./random-number-service-options";
+import { Injectable } from '@nestjs/common';
+import { defaultRandomNumberServiceOptions, RandomNumberServiceOptions } from './random-number-service-options';
 
 @Injectable()
 export class RandomNumberService {
   private options: RandomNumberServiceOptions;
 
   constructor(options: Partial<RandomNumberServiceOptions>) {
-    this.options = Object.assign(
-      {},
-      defaultRandomNumberServiceOptions,
-      options
-    );
+    this.options = Object.assign({}, defaultRandomNumberServiceOptions, options);
   }
 
   generate(): number {

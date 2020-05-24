@@ -1,10 +1,10 @@
-import { DynamicModule, Module } from "@nestjs/common";
-import { RandomNumberServiceOptions } from "./random-number-service-options";
-import { RandomNumberService } from "./random-number.service";
+import { DynamicModule, Module } from '@nestjs/common';
+import { RandomNumberServiceOptions } from './random-number-service-options';
+import { RandomNumberService } from './random-number.service';
 import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
-  imports: [TelegramModule]
+  imports: [TelegramModule],
 })
 export class NestrandModule {
   static forRoot(options: Partial<RandomNumberServiceOptions>): DynamicModule {
@@ -16,7 +16,7 @@ export class NestrandModule {
     ];
 
     return {
-      providers: providers,
+      providers,
       exports: providers,
       module: NestrandModule,
     };

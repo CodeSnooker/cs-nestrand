@@ -1,8 +1,8 @@
-import { Test, TestingModule } from "@nestjs/testing";
-import { RandomNumberServiceOptions } from "./random-number-service-options";
-import { RandomNumberService } from "./random-number.service";
+import { Test, TestingModule } from '@nestjs/testing';
+import { RandomNumberServiceOptions } from './random-number-service-options';
+import { RandomNumberService } from './random-number.service';
 
-describe("RandomNumberService", () => {
+describe('RandomNumberService', () => {
   let service: RandomNumberService;
   const options: Partial<RandomNumberServiceOptions> = {};
 
@@ -21,11 +21,11 @@ describe("RandomNumberService", () => {
     service = module.get<RandomNumberService>(RandomNumberService);
   });
 
-  it("should be defined", () => {
+  it('should be defined', () => {
     expect(service).toBeDefined();
   });
 
-  it("#1", () => {
+  it('#1', () => {
     expect(service.generate()).toBeDefined();
   });
 });
